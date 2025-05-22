@@ -6,6 +6,7 @@ namespace Gameplay.Assets._2_Gameplay.Scripts.So.So_Actions
     [CreateAssetMenu(menuName = "Movement/Jump/Double", fileName = "DoubleJumpSo")]
     public class DoubleJumpSo : SoJump
     {
+        //Similar to singleJumpSo but  added a quantity of max jumps the player can do
         private int jumpsDone = 0;
         private readonly int maxJumps = 2;
 

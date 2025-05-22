@@ -14,6 +14,8 @@ namespace Gameplay
         private Character _character;
         private Coroutine _jumpCoroutine;
 
+        //Added Scriptable objects with every movement
+
         [SerializeField] private SoJump jump;
 
         //[SerializeField] private SoSwim swim;
@@ -36,6 +38,8 @@ namespace Gameplay
             }
             if (jumpInput?.action != null)
                 jumpInput.action.performed += HandleJumpInput;
+
+            // added climbInput and swimInput 
             /*
              if (climbInput?.action != null)
              climbInput.action.performed += HandleClimbInput;
@@ -54,6 +58,8 @@ namespace Gameplay
             }
             if (jumpInput?.action != null)
                 jumpInput.action.performed -= HandleJumpInput;
+            // added climbInput and swimInput 
+
             /*
             if (climbInput?.action != null)
             climbInput.action.performed += HandleClimbInput;
@@ -79,6 +85,8 @@ namespace Gameplay
             jump.OnJump();
 
         }
+        // added climb and swim functions in comments
+
         //HandleSwimInput 
 
         //HandleClimbInput
@@ -95,6 +103,7 @@ namespace Gameplay
             {
                 if (Vector3.Angle(contact.normal, Vector3.up) < 5)
                 {
+                    //call function Reset of SoJump to trigger in case player collision with ground 
                     if (jump is SoJump resettable)
                         resettable.Reset();
                 }

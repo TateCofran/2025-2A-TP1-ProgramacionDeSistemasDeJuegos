@@ -7,6 +7,7 @@ namespace Excercise1
     {
         private readonly Dictionary<string, ICharacter> _charactersById = new();
 
+        //added a Singleton, in case of multiple CharacterService this can be replaced 
         public static CharacterService Instance { get; private set; }
         void Awake()
         {
